@@ -4,9 +4,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
-import 'package:news_api/src/artical_news.dart';
-import 'package:news_api/src/constants.dart';
-import 'package:news_api/src/list_of_country.dart';
+import 'package:news_api/src/articles/artical_news.dart';
+import 'package:news_api/src/api/constants.dart';
+import 'package:news_api/src/countries/list_of_country.dart';
 
 void main() => runApp(const MyApp());
 
@@ -81,15 +81,17 @@ class _MyAppState extends State<MyApp> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (country != null) Text("Country = $cName") else Container(),
+                  /*if (country != null) Text("Country = $cName") else Container(),*/
+                  if (country != null) Text("País: $cName") else Container(),
                   const SizedBox(height: 10),
-                  if (category != null) Text("Category = $category") else Container(),
+                  /*if (category != null) Text("Categoría = $category") else Container(),*/
+                  if (category != null) Text("Categoría: $category") else Container(),
                   const SizedBox(height: 20),
                 ],
               ),
               ListTile(
                 title: TextFormField(
-                  decoration: const InputDecoration(hintText: "Find Keyword"),
+                  decoration: const InputDecoration(hintText: "Buscar PalabraClave"),
                   scrollPadding: const EdgeInsets.all(5),
                   onChanged: (val) => setState(() => findNews = val),
                 ),
@@ -98,29 +100,30 @@ class _MyAppState extends State<MyApp> {
                   icon: const Icon(Icons.search),
                 ),
               ),
-              // Container(
-              //   child: Row(
-              //     children: [
-              //       Expanded(
-              //         child: Padding(
-              //           padding: EdgeInsets.only(left: 5),
-              //           child: TextFormField(
-              //             decoration: InputDecoration(hintText: "Find Keyword"),
-              //             scrollPadding: EdgeInsets.all(5),
-              //             onChanged: (val) => setState(() => findNews = val),
-              //           ),
-              //         ),
-              //       ),
-              //       MaterialButton(
-              //         child: Text("Find"),
-              //         onPressed: () async => getNews(searchKey: findNews),
-              //       ),
-              //     ],
-              //   ),
-              // ),
+              
+              /*Container(*/
+                /*child: Row(*/
+                  /*children: [*/
+                    /*Expanded(*/
+                      /*child: Padding(*/
+                        /*padding: EdgeInsets.only(left: 5),*/
+                        /*child: TextFormField(*/
+                          /*decoration: InputDecoration(hintText: "Find Keyword"),*/
+                           /*scrollPadding: EdgeInsets.all(5),*/
+                          /*onChanged: (val) => setState(() => findNews = val),*/
+                        /*),*/
+                      /*),*/
+                    /*),*/
+                    /*MaterialButton(*/
+                      /*child: Text("Find"),*/
+                      /*onPressed: () async => getNews(searchKey: findNews),*/
+                    /*),*/
+                  /*],*/
+                /*),*/
+              /*),*/
 
               ExpansionTile(
-                title: const Text("Country"),
+                title: const Text("País"),
                 children: <Widget>[
                   for (int i = 0; i < listOfCountry.length; i++)
                     DropDownList(
@@ -134,7 +137,7 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
               ExpansionTile(
-                title: const Text("Category"),
+                title: const Text("Categorías"),
                 children: [
                   for (int i = 0; i < listOfCategory.length; i++)
                     DropDownList(
@@ -147,7 +150,7 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
               ExpansionTile(
-                title: const Text("Channel"),
+                title: const Text("Canales"),
                 children: [
                   for (int i = 0; i < listOfNewsChannel.length; i++)
                     DropDownList(
@@ -162,7 +165,7 @@ class _MyAppState extends State<MyApp> {
         ),
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("News"),
+          title: const Text("Últimas noticias"),
           actions: [
             IconButton(
               onPressed: () {
@@ -276,7 +279,7 @@ class _MyAppState extends State<MyApp> {
                           if (index == news.length - 1 && isLoading)
                             const Center(
                               child: CircularProgressIndicator(
-                                backgroundColor: Colors.yellow,
+                                backgroundColor: Colors.grey,
                               ),
                             )
                           else
@@ -334,7 +337,10 @@ class _MyAppState extends State<MyApp> {
       setState(() => news = []);
       pageNum = 1;
     }
-    baseApi = "https://newsapi.org/v2/top-headlines?pageSize=10&page=$pageNum&";
+    /*baseApi = "https://newsapi.org/v2/top-headlines?pageSize=10&page=$pageNum&";*/
+
+    /*baseApi = "https://newsapi.org/v2/top-headlines?";*/
+    baseApi = "https://newsapi.org/v2/top-headlines/";
 
     baseApi += country == null ? 'country=in&' : 'country=$country&';
     baseApi += category == null ? '' : 'category=$category&';

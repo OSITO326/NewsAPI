@@ -32,7 +32,7 @@ class _ArticalNewsState extends State<ArticalNews> {
             Container(
               alignment: FractionalOffset.center,
               child: const CircularProgressIndicator(
-                backgroundColor: Colors.yellow,
+                backgroundColor: Colors.grey,
               ),
             )
           else
