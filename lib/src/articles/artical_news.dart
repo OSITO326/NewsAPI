@@ -17,7 +17,8 @@ class _ArticalNewsState extends State<ArticalNews> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(centerTitle: true, title: const Text("News")),
+      /*appBar: AppBar(centerTitle: true, title: const Text("News")),*/
+      appBar: AppBar(centerTitle: true, title: const Text("Últimas noticias")),
       body: Stack(
         children: [
           WebView(

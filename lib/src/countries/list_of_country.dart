@@ -6,9 +6,6 @@ const listOfCountry = [
   {"name": "Venezuela", "code": "ve"},
   /*{"name": "United Arab Emirates", "code": "ae"},*/
   /*{"name": "New Zealand", "code": "nz"},*/
-  /*{"name": "Israel", "code": "il"},*/
-  /*{"name": "Indonesia", "code": "id"},*/
-  /*{"name": "INDIA", "code": "in"},*/
 ];
 
 const listOfCategory = [
@@ -23,10 +20,7 @@ const listOfCategory = [
 ];
 const listOfNewsChannel = [
   {"name": "BBC News", "code": "bbc-news"},
-  /*{"name": "The Times of India", "code": "the-times-of-india"},*/
-  /*{"code": "politico", "name": "politico"},*/
   {"code": "the-washington-post", "name": "The Washington Post"},
-  /*{"code": "reuters", "name": "reuters"},*/
   {"code": "cnn", "name": "cnn"},
   {"code": "nbc-news", "name": "nbc news"},
   {"code": "the-hill", "name": "The Hill"},

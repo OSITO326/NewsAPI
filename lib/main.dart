@@ -81,10 +81,8 @@ class _MyAppState extends State<MyApp> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  /*if (country != null) Text("Country = $cName") else Container(),*/
                   if (country != null) Text("País: $cName") else Container(),
                   const SizedBox(height: 10),
-                  /*if (category != null) Text("Categoría = $category") else Container(),*/
                   if (category != null) Text("Categoría: $category") else Container(),
                   const SizedBox(height: 20),
                 ],
@@ -159,7 +157,6 @@ class _MyAppState extends State<MyApp> {
                     ),
                 ],
               ),
-              //ListTile(title: Text("Exit"), onTap: () => exit(0)),
             ],
           ),
         ),
@@ -337,10 +334,8 @@ class _MyAppState extends State<MyApp> {
       setState(() => news = []);
       pageNum = 1;
     }
-    /*baseApi = "https://newsapi.org/v2/top-headlines?pageSize=10&page=$pageNum&";*/
 
-    /*baseApi = "https://newsapi.org/v2/top-headlines?";*/
-    baseApi = "https://newsapi.org/v2/top-headlines/";
+    baseApi = "https://newsapi.org/v2/top-headlines?";
 
     baseApi += country == null ? 'country=in&' : 'country=$country&';
     baseApi += category == null ? '' : 'category=$category&';
@@ -348,12 +343,14 @@ class _MyAppState extends State<MyApp> {
     if (channel != null) {
       country = null;
       category = null;
-      baseApi = "https://newsapi.org/v2/top-headlines?pageSize=10&page=$pageNum&sources=$channel&apiKey=7112d19a15b749c69342bcbc0be23ad5";
+      /*baseApi = "https://newsapi.org/v2/top-headlines?pageSize=10&page=$pageNum&sources=$channel&apiKey=7112d19a15b749c69342bcbc0be23ad5";*/
+      baseApi = "https://newsapi.org/v2/top-headlines?page=$pageNum&sources=$channel&apiKey=7112d19a15b749c69342bcbc0be23ad5";
     }
     if (searchKey != null) {
       country = null;
       category = null;
-      baseApi = "https://newsapi.org/v2/top-headlines?pageSize=10&page=$pageNum&q=$searchKey&apiKey=7112d19a15b749c69342bcbc0be23ad5";
+      /*baseApi = "https://newsapi.org/v2/top-headlines?pageSize=10&page=$pageNum&q=$searchKey&apiKey=7112d19a15b749c69342bcbc0be23ad5";*/
+      baseApi = "https://newsapi.org/v2/top-headlines?page=$pageNum&q=$searchKey&apiKey=7112d19a15b749c69342bcbc0be23ad5";
     }
     //print(baseApi);
     getDataFromApi(baseApi);
