@@ -14,3 +14,16 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Run application
+
+To run the project, perform the following steps:
+- Clone the repository and enter the folder.
+- Get the packages with the next command:
+  ```
+    flutter get pub
+  ```
+- Once download the packages required run the project:
+  ```
+    flutter run
+  ```
