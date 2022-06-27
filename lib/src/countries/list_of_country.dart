@@ -2,10 +2,10 @@ const listOfCountry = [
   {"name": "Argentina", "code": "ar"},
   {"name": "Colombia", "code": "ar"},
   {"name": "México", "code": "mx"},
+  {"name": "New Zealand", "code": "nz"},
+  {"name": "United Arab Emirates", "code": "ae"},
   {"name": "United States", "code": "us"},
   {"name": "Venezuela", "code": "ve"},
-  /*{"name": "United Arab Emirates", "code": "ae"},*/
-  /*{"name": "New Zealand", "code": "nz"},*/
 ];
 
 const listOfCategory = [
@@ -21,7 +21,7 @@ const listOfCategory = [
 const listOfNewsChannel = [
   {"name": "BBC News", "code": "bbc-news"},
   {"code": "the-washington-post", "name": "The Washington Post"},
-  {"code": "cnn", "name": "cnn"},
+  /*{"code": "cnn", "name": "cnn"},*/
   {"code": "nbc-news", "name": "nbc news"},
   {"code": "the-hill", "name": "The Hill"},
   {"code": "fox-news", "name": "Fox News"},
